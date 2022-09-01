@@ -57,7 +57,7 @@ module.exports= class Application{
     }
 
     createRoutes(){
-        this.#app.use("/", (req, res, next)=> {
+        this.#app.use("/home", (req, res, next)=> {
             return res.json({
                 message: "this is a new Express Application"
             })
