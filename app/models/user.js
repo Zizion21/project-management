@@ -1,5 +1,7 @@
 const mongoose= require("mongoose");
+
 const UserSchema= mongoose.Schema({
+
     first_name : {type: String},
     last_name : {type: String},
     username : {type: String, required: true, unique: true},
@@ -9,6 +11,7 @@ const UserSchema= mongoose.Schema({
     password : {type: String, required: true},
     skills : {type: String, default: []},
     teams : {type: String, default: []}
+    
 },{
     timestamps: true
 })
