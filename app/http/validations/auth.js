@@ -10,8 +10,8 @@ function registerValidator(){
 
             } throw "نام کاربری نمیتواند خالی باشد"
         }),
-        body("email").isEmail().withMessage("ایمیل وارد شده صحیح نمیباشد"),
-        body("mobile").isMobilePhone("fa-IR").withMessage("شماره موبایل وارد شده صحیح نمیباشد"),
+        body("email").not().isEmail().withMessage("ایمیل وارد شده صحیح نمیباشد"),
+        body("mobile").not().isMobilePhone("fa-IR").withMessage("شماره موبایل وارد شده صحیح نمیباشد"),
         body("password").isLength({min: 6, max: 16}).withMessage("رمز عبور باید بین 6 الی 16 کاراکتر باشد")
         .custom((value, ctx)=>{
             if(!value) throw "رمز عبور نمیتواند خالی باشد";

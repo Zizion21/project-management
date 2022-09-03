@@ -63,7 +63,7 @@ module.exports= class Application{
                 message: "this is a new Express Application"
             })
         })
-        this.#app.use(AllRoutes
+        this.#app.use(AllRoutes)
         //     (err, req, res, next)=> {
         //     try {
         //         this.#app.use(AllRoutes)
@@ -71,6 +71,6 @@ module.exports= class Application{
         //         next(error)
         //     }
         // }
-        )
+        // )
     }
 }
