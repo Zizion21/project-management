@@ -63,12 +63,14 @@ module.exports= class Application{
                 message: "this is a new Express Application"
             })
         })
-        this.#app.use((err, req, res, next)=> {
-            try {
-                this.#app.use(AllRoutes)
-            } catch (error) {
-                next(error)
-            }
-        })
+        this.#app.use(AllRoutes
+        //     (err, req, res, next)=> {
+        //     try {
+        //         this.#app.use(AllRoutes)
+        //     } catch (error) {
+        //         next(error)
+        //     }
+        // }
+        )
     }
 }

@@ -11,6 +11,9 @@ class TeamController{
     updateTeam(){
 
     }
+    removeUserFromTeam(){
+        
+    }
 }
 module.exports={
     TeamController: new TeamController()
