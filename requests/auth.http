@@ -1,10 +1,20 @@
 ###register request
 Post http://localhost:3000/auth/register
+Content-Type: application/json
 
 {
-    "username" : "",
-    "email" : "",
-    "mobile" : "",
-    "password" : "",
-    "confirm_password" : ""
+    "username" : "zizion21",
+    "email" : "zizionx21@gmail.com",
+    "mobile" : "09943317629",
+    "password" : "1234567",
+    "confirm_password" : "1234567"
+}
+
+###login
+Post http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username" : "zizion21",
+    "password" : "1234567"
 }
