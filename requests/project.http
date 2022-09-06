@@ -1,8 +1,10 @@
 ### create project
-Post http://localhost:3000/user/profile
+Post http://localhost:3000/project/create
 Authorization: {{$dotenv token}}
 Content-Type: application/json
 
 {
+    "title" : "project No.3",
+    "text" : "this is a description for project no.2"
     
 }
