@@ -4,7 +4,7 @@ class ProjectController{
     async createProject(req, res, next){
         try {
             const {title, text}= req.body;
-            const owner= req.user._id;
+            const owner= req.user._id
             const result= await ProjectModel.create({title, text, owner});
             if(!result) throw {status: 400, message:"پروژه ایجاد نشد. لطفا مجددا تلاش فرمایید"};
             return res.status(201).json({

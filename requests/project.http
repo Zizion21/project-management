@@ -4,7 +4,7 @@ Authorization: {{$dotenv token}}
 Content-Type: application/json
 
 {
-    "title" : "project No.3",
-    "text" : "this is a description for project no.2"
+    "title" : "the first project",
+    "text" : "please work.... I need to get this done man!"
     
 }
