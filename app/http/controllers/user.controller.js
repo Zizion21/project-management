@@ -40,6 +40,15 @@ class UserController{
         }
 
     }
+
+    async uploadProfileImage(req, res, next){
+        try {
+            console.log(req.file);
+            
+        } catch (error) {
+            next(error)
+        }
+    }
     addSkills(){
 
     }
