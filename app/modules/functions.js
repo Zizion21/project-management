@@ -10,7 +10,7 @@ function hashString(str){
 }
 
 function tokenGenerator(payload){
-    const token= jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: "3 days"})
+    const token= jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: "365 days"})
     return token
 }
 
@@ -20,7 +20,7 @@ function verifyJwtToken(token){
     return result;
 }
 
-function createUpdoadPath(){
+function createUploadPath(){
     const d= new Date();
     const Year= ""+d.getFullYear();
     const Month= ""+ d.getMonth();
@@ -35,5 +35,5 @@ module.exports={
     hashString,
     tokenGenerator,
     verifyJwtToken,
-    createUpdoadPath
+    createUploadPath
 }
