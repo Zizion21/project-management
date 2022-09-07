@@ -3,11 +3,11 @@ Post http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "username" : "zizion_",
-    "email" : "zeinabjafari9999@gmail.com",
-    "mobile" : "09925980090",
-    "password" : "flyapp.com",
-    "confirm_password" : "flyapp.com"
+    "username" : "zizion21",
+    "email" : "zizion2121@gmail.com",
+    "mobile" : "09127436598",
+    "password" : "1234567",
+    "confirm_password" : "1234567"
 }
 
 ###login
@@ -16,6 +16,6 @@ Content-Type: application/json
 Authorization: Bearer {{$dotenv token}}
 
 {
-    "username" : "zizion_",
-    "password" : "flyapp.com"
+    "username" : "zizion21",
+    "password" : "1234567"
 }

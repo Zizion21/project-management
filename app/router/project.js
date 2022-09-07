@@ -1,3 +1,4 @@
+const fileUpload = require("express-fileupload");
 const { ProjectController } = require("../http/controllers/project.controller");
 const { checkLogin } = require("../http/middlewares/autoLogin");
 const { expressValidatorMapper } = require("../http/middlewares/checkErrors");
@@ -6,7 +7,7 @@ const { uploadFile } = require("../modules/express-fileupload");
 
 const router= require("express").Router();
 
-router.post("/create",checkLogin, uploadFile, createProjectvalidator(), expressValidatorMapper, ProjectController.createProject)
+router.post("/create", fileUpload(), checkLogin, uploadFile, createProjectvalidator(), expressValidatorMapper, ProjectController.createProject)
 module.exports= {
     projectRoutes : router
 }

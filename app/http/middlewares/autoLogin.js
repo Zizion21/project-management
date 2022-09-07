@@ -6,7 +6,7 @@ const checkLogin= async(req, res, next)=>{
         // let authError= {status: 401, message:"لطفا وارد حساب کاربری خود شوید"};
         const authorization= req?.headers?.authorization;
         if(!authorization) throw {status: 401, message:"1 لطفا وارد حساب کاربری خود شوید"};
-        let token= authorization.split(" ")?.[0];
+        let token= authorization.split(" ")?.[1];
         if(!token) throw {status: 401, message:"2 لطفا وارد حساب کاربری خود شوید"};
         
         const result= verifyJwtToken(token)
