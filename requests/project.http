@@ -1,10 +1,15 @@
 ### create project
 Post http://localhost:3000/project/create
-Authorization: {{$dotenv token}}
+Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 {
-    "title" : "the first project",
-    "text" : "please work.... I need to get this done man!"
+    "title" : "IDK the number",
+    "text" : "this is a test this is a test"
     
 }
+
+### getting the list of projects
+Get http://localhost:3000/project/list
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
