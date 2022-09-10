@@ -4,8 +4,8 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 {
-    "title" : "IDK the number",
-    "text" : "this is a test this is a test"
+    "title" : "IDK the number22222",
+    "text" : "this is a test this is a test22222222"
     
 }
 
@@ -15,6 +15,22 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 ### getting project by ID
-Get http://localhost:3000/project/631896d1de820178e0142bf0
+Get http://localhost:3000/project/6319c2a317a4da73f6fa871e
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
+
+### removing project by ID
+Delete http://localhost:3000/project/remove/6319c9d4211526e0ecb9f307
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+### editing project by ID
+Put http://localhost:3000/project/edit/6319c2a317a4da73f6fa871e
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "title" : "hell",
+    "text" : "hello there this is a caption",
+    "tags" : ["", ""]
+}
