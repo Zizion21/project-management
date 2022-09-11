@@ -36,10 +36,58 @@ class TeamController{
             next(error)
         }
     }
-    inviteUserToTeam(){
+    async getTeamById(req, res, next){
+        try {
+            const teamID= req.params.id;
+            const team= await TeamModel.findById(teamID);
+            if(!team) throw{status: 404, message:"تیمی یافت نشد"};
+            return res.status(200).json({
+                status: 200,
+                success: true,
+                team
+            })
+            
+        } catch (error) {
+            next(error)
+        }
+    }
+    async getMyTeams(req, res, next){
+        try {
+            const userID= req.user._id;
+            const teams=await TeamModel.find({
+                $or: [
+                    {owner: userID},
+                    {users: userID}
+                ]
+            })
+            return res.status(200).json({
+                status: 200,
+                success: true,
+                teams
+            })
+            
+        } catch (error) {
+            next(error)
+        }
+    }
+    async removeTeamById(req, res, next){
+        try {
+            const teamID= req.params.id;
+            const team= await TeamModel.findById(teamID);
+            if(!team) throw{ status: 404, message:"تیمی یافت نشد"};
+            const result= await TeamModel.deleteOne({_id: teamID})
+            if(result.deletedCount == 0) throw {status: 500, message:"تیم حذف نشد لطفا مجددا تلاش کنید"};
+            return res.status(200).json({
+                status: 200,
+                success: true,
+                message:"تیم با موفقیت حدف شد"
+            })
+        } catch (error) {
+            next(error)
+        }
 
     }
-    removeTeamById(){
+    inviteUserToTeam(){
 
     }
     updateTeam(){

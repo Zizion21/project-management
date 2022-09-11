@@ -13,3 +13,13 @@ Content-Type: application/json
 Get http://localhost:3000/team/list
 Authorization: Beare {{$dotenv token}}
 Content-Type: application/json
+
+### getting a team by ID
+Get http://localhost:3000/team/631d83bb2bdcc98f938e843d
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+### getting my teams
+Get http://localhost:3000/team/me
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
