@@ -13,6 +13,7 @@ router.get("/list", checkLogin, ProjectController.getAllProject)
 router.get("/:id", checkLogin, mongoIDValidator(), expressValidatorMapper, ProjectController.getProjectById)
 router.delete("/remove/:id", checkLogin, mongoIDValidator(), expressValidatorMapper, ProjectController.removeProject)
 router.put("/edit/:id", checkLogin, mongoIDValidator(), expressValidatorMapper, ProjectController.updateProject)
+router.patch("/edit-projectImage/:id", fileUpload(), checkLogin, uploadFile, expressValidatorMapper, ProjectController.updateProjectImage)
 
 module.exports= {
     projectRoutes : router

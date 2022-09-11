@@ -15,7 +15,7 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 ### getting project by ID
-Get http://localhost:3000/project/6319c2a317a4da73f6fa871e
+Get http://localhost:3000/project/6319c34409eac0c2d382f1cd
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
