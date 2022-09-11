@@ -1,0 +1,15 @@
+### create teams
+Post http://localhost:3000/team/create
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "name" : "team 2",
+    "description" : "this is a caption for the first team",
+    "username" : "zizion"
+}
+
+### getting the list of teams
+Get http://localhost:3000/team/list
+Authorization: Beare {{$dotenv token}}
+Content-Type: application/json
