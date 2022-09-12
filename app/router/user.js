@@ -8,6 +8,7 @@ const router= require("express").Router();
 router.get("/profile", checkLogin, UserController.getProfile)
 router.post("/profile", checkLogin, UserController.editProfile)
 router.post("/profile-image", upload_multer.single("image"), imageValidator(), expressValidatorMapper, checkLogin, UserController.uploadProfileImage)
+router.get("/requests", checkLogin, UserController.getAllRequest )
 
 module.exports= {
     userRoutes : router

@@ -12,3 +12,8 @@ Content-Type: application/json
     "last_name": "",
     "skills": ["nodejs", "expressjs", "photography"]
 }
+
+### getting all user's requests
+Get http://localhost:3000/user/requests
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json

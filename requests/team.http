@@ -30,6 +30,6 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 ### inviting members to the team
-Get http://localhost:3000/team/invite/631d83e62bdcc98f938e8445/zizion_
+Get http://localhost:3000/team/invite/631d83bb2bdcc98f938e843d/zeinabjafari22
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json

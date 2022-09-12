@@ -58,6 +58,39 @@ class UserController{
             next(error)
         }
     }
+    async getAllRequest(req, res, next){
+        try {
+            const userID= req.user._id;
+            const {inviteRequests}= await UserModel.findOne({_id: userID}, {inviteRequests: 1})
+            return res.json({
+                requests: inviteRequests || []
+            })
+            
+        } catch (error) {
+            next(error)
+        }
+    }
+    async getPendingRequests(req, res, next){
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+    async getAcceptedRequests(req, res, next){
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
+    async getRejectedRequests(req, res, next){
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
     addSkills(){
 
     }

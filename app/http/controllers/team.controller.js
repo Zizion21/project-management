@@ -110,7 +110,7 @@ class TeamController{
             const user= await UserModel.findOne({username});
             if(!user) throw{ status: 400, message: "کاربری برای دعوت به گروه یافت نشد"}
 
-            const userInvited= await this.findUserInTeam(teamID, userID)
+            const userInvited= await this.findUserInTeam(teamID, user._id)
             if(userInvited) throw {status: 400, message: "این کاربر در تیم عضو میباشد"}
 
             const request={

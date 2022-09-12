@@ -31,8 +31,10 @@ function createUploadPath(){
     return path.join("public", "uploads", Year, Month, day);
 
 }
-function createLinkForFiles(filaAddress, req){
-    return req.protocol + "://" + req.get("host") + "/" + (filaAddress.replace(/[\\\\]/gm, "/"));
+function createLinkForFiles(fileAddress, req){
+    // return req.protocol + "://" + req.get("host") + "/" + (filaAddress.replace(/[\\\\]/gm, "/"));
+    return fileAddress? (req.protocol + "://" + req.get("host")+ "/" + (fileAddress.replace(/[\\\\]/gm, "/"))) : undefined
+
 }
 
 module.exports={
