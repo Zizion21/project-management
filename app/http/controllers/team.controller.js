@@ -133,7 +133,29 @@ class TeamController{
             next(error)
         }
     }
-    updateTeam(){
+    async updateTeam(req, res, next){
+        try {
+            const data= {...req.body};
+            Object.keys(data).forEach(key => {
+                if(!data[key]) delete data[key];
+                if(["", " ", null, undefined, NaN].includes(data[key])) delete data[key];
+
+            })
+            const userID= req.user._id;
+            const {teamID}= req.params;
+            const team= await TeamModel.findOne({owner: userID, _id: teamID});
+            if(!team) throw{status: 404, message:"تیم با چنین مشخصاتی یافت نشد"};
+            const teamEditResult= await TeamModel.updateOne({_id: teamID}, {$set: data});
+            if(teamEditResult.matchedCount == 0) throw {status: 500, message: "بروزرسانی انجام نشد"};
+            return res.status(200).json({
+                status: 200,
+                success: true,
+                message: "بروزرسانی با موفقیت انجام شد"
+            })
+            
+        } catch (error) {
+            next(error)
+        }
 
     }
     removeUserFromTeam(){

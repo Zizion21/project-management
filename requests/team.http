@@ -33,3 +33,13 @@ Content-Type: application/json
 Get http://localhost:3000/team/invite/631f2a9e74fcfcfe80a5fc37/zeinab_naderi
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
+
+### updating a team by ID
+Put http://localhost:3000/team/update/631d83bb2bdcc98f938e843d
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "name" : "zizion's first team",
+    "description" : "this is zizion's first team"
+}
