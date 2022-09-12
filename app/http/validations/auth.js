@@ -39,7 +39,7 @@ function loginValidation(){
     return [
         body("username").notEmpty().withMessage("نام کاربری نمیتواند خالی باشد")
         .custom(username=>{
-            const usernameRegex= /^[a-z]+[z-z0-9\_\.]{2,}/gi
+            const usernameRegex= /^[a-z]+[a-z0-9\_\.]{2,}/gi
             if(usernameRegex.test(username)){
                 return true;
             } throw "heyنام کاربری صحیح نمیباشد"

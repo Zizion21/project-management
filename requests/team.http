@@ -4,8 +4,8 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 {
-    "name" : "team 2",
-    "description" : "this is a caption for the first team",
+    "name" : "team zizion",
+    "description" : "team zizion this is a caption for the team zizion",
     "username" : "zizion"
 }
 
@@ -15,7 +15,7 @@ Authorization: Beare {{$dotenv token}}
 Content-Type: application/json
 
 ### getting a team by ID
-Get http://localhost:3000/team/631d83e62bdcc98f938e8445
+Get http://localhost:3000/team/631d83bb2bdcc98f938e843d
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
@@ -30,6 +30,6 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 ### inviting members to the team
-Get http://localhost:3000/team/invite/631d83bb2bdcc98f938e843d/zeinabjafari22
+Get http://localhost:3000/team/invite/631f2a9e74fcfcfe80a5fc37/zeinab_naderi
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json

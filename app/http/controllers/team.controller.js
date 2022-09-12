@@ -117,7 +117,7 @@ class TeamController{
                 caller: req.user._id,
                 requestDate: new Date(),
                 teamID,
-                status: "pending"
+                status: "accepted"
             }
             const updateUserResult= await UserModel.updateOne({username},{
                 $push: {inviteRequests: request}

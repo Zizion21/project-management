@@ -19,6 +19,11 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 ### getting user's requests by status
-Get http://localhost:3000/user/requests/pending
+Get http://localhost:3000/user/requests/accepted
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+### answering requests by user
+Get http://localhost:3000/user/change-status-request/631f2adb74fcfcfe80a5fc41/rejected
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
