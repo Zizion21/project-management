@@ -1,6 +1,11 @@
-const {TeamModel}= require("../../models/team")
+const autoBind = require("auto-bind");
+const {TeamModel}= require("../../models/team");
+const { UserModel } = require("../../models/user");
 
 class TeamController{
+    constructor(){
+        autoBind(this)
+    }
     async createTeam(req, res, next){
         try {
             const {name, username, description}= req.body;
@@ -87,8 +92,46 @@ class TeamController{
         }
 
     }
-    inviteUserToTeam(){
+    async findUserInTeam(teamID, userID){
+        const result= await TeamModel.findOne({
+            $or: [{owner: userID}, {users: userID}],
+            _id: teamID
+        })
+        return !!result
+    }
+    async inviteUserToTeam(req, res, next){
+        try {
+            const userID= req.user._id;
+            const {username, teamID}= req.params;
 
+            const team= await this.findUserInTeam(teamID, userID);
+            if(!team) throw {status: 400, message: "تیمی برای دعوت ممبر یافت نشد"}
+
+            const user= await UserModel.findOne({username});
+            if(!user) throw{ status: 400, message: "کاربری برای دعوت به گروه یافت نشد"}
+
+            const userInvited= await this.findUserInTeam(teamID, userID)
+            if(userInvited) throw {status: 400, message: "این کاربر در تیم عضو میباشد"}
+
+            const request={
+                caller: req.user._id,
+                requestDate: new Date(),
+                teamID,
+                status: "pending"
+            }
+            const updateUserResult= await UserModel.updateOne({username},{
+                $push: {inviteRequests: request}
+            })
+            if(updateUserResult.modifiedCount == 0) throw {status: 500, message: "درخواست دعوت ثبت نشد لطفا مجددا تلاش کنید"};
+            return res.status(200).json({
+                status: 200,
+                success: true,
+                message: "درخواست دعوت کاربر با موفقیت ثبت شد "
+            })
+           
+        } catch (error) {
+            next(error)
+        }
     }
     updateTeam(){
 

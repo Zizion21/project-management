@@ -15,6 +15,19 @@ function createTeamValidator(){
             throw "نام کاربری را به طور صحیح وارد کنید"
         })]
 }
+// function inviteToTeam(){
+//     return [
+//         param("teamID").custom(async(teamID, {req})=>{
+//             const userId=req.user._id;
+//             const team= await TeamModel.findOne({ $or:
+//             [{owner: userId}, {users: userId}], _id:teamID
+//         })
+//         if(!team) throw "تیمی برای دعوت ممبر یافت نشد";
+
+//         })
+
+//     ]
+// }
 
 module.exports={
     createTeamValidator

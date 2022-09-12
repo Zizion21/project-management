@@ -15,7 +15,7 @@ Authorization: Beare {{$dotenv token}}
 Content-Type: application/json
 
 ### getting a team by ID
-Get http://localhost:3000/team/631d7d78c4d9c90eb5f1496d
+Get http://localhost:3000/team/631d83e62bdcc98f938e8445
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
@@ -26,5 +26,10 @@ Content-Type: application/json
 
 ### deleting a team by ID
 Delete http://localhost:3000/team/remove/631d7d78c4d9c90eb5f1496d
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+### inviting members to the team
+Get http://localhost:3000/team/invite/631d83e62bdcc98f938e8445/zizion_
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
