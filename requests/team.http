@@ -41,5 +41,6 @@ Content-Type: application/json
 
 {
     "name" : "zizion's first team",
-    "description" : "this is zizion's first team"
+    "description" : "this is zizion's first team",
+    "username": "zizion's first"
 }
